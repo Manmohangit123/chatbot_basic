@@ -41,7 +41,6 @@ app.post("/chat", async (req, res) => {
       console.error("⚠️ Gemini returned invalid or empty response:", response);
       return res.status(500).json({ reply: "AI gave an empty response." });
     }
-
     const reply = response.text();
     console.log("🤖 Gemini Reply:", reply);
 
@@ -57,7 +56,7 @@ app.post("/chat", async (req, res) => {
       console.error("🧾 Gemini Response Text:", body);
     }
 
-    res.status(500).json({ reply: "AI failed to respond. Try again." });
+    res.status(500).json({ reply: "AI is not responding. Please Try again." });
   }
 });
 
